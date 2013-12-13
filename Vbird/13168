@@ -1,0 +1,1509 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="GBK" />
+<title>unix入门初学者教程 - 书籍下载 - 灯火互联网 </title>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="generator" content="phpwind v9.0 20130227" />
+<meta name="description" content="回复可见下载地址 " />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="http://www.atcpu.com/themes/site/default/css/dev/core.css?v=20130227" />
+<link rel="stylesheet" href="http://www.atcpu.com/themes/site/default/css/dev/style.css?v=20130227" />
+<!-- <base id="headbase" href="http://www.atcpu.com/" /> -->
+<style>body{font-family:'Microsoft Yahei';}div.editor_content{font-size:16px;}</style><script>
+//全局变量 Global Variables
+var GV = {
+	JS_ROOT : 'http://www.atcpu.com/res/js/dev/',										//js目录
+	JS_VERSION : '20130227',											//js版本号(不能带空格)
+	JS_EXTRES : 'http://www.atcpu.com/themes/extres',
+	TOKEN : '0c05ccf6c04e4d50',	//token $.ajaxSetup data
+	U_CENTER : 'http://www.atcpu.com/space-index-run',		//用户空间(参数 : uid)
+	U_AVATAR_DEF : 'http://www.atcpu.com/res/images/face/face_small.jpg',					//默认小头像
+	U_ID : parseInt('0'),									//uid
+	REGION_CONFIG : '',														//地区数据
+	CREDIT_REWARD_JUDGE : '',			//是否积分奖励，空值:false, 1:true
+	URL : {
+		LOGIN : 'http://www.atcpu.com/u-login-run',										//登录地址
+		QUICK_LOGIN : 'http://www.atcpu.com/u-login-fast',								//快速登录
+		IMAGE_RES: 'http://www.atcpu.com/res/images',										//图片目录
+		CHECK_IMG : 'http://www.atcpu.com/u-login-showverify',							//验证码图片url，global.js引用
+		VARIFY : 'http://www.atcpu.com/verify-index-get',									//验证码html
+		VARIFY_CHECK : 'http://www.atcpu.com/verify-index-check',							//验证码html
+		HEAD_MSG : {
+			LIST : 'http://www.atcpu.com/message-notice-minilist'							//头部消息_列表
+		},
+		USER_CARD : 'http://www.atcpu.com/space-card-run',								//小名片(参数 : uid)
+		LIKE_FORWARDING : 'http://www.atcpu.com/bbs-post-doreply',							//喜欢转发(参数 : fid)
+		REGION : 'http://www.atcpu.com/misc-webData-area',									//地区数据
+		SCHOOL : 'http://www.atcpu.com/misc-webData-school',								//学校数据
+		EMOTIONS : "http://www.atcpu.com/emotion-index-run?type=bbs",					//表情数据
+		CRON_AJAX : '',											//计划任务 后端输出执行
+		FORUM_LIST : 'http://www.atcpu.com/bbs-forum-list',								//版块列表数据
+		CREDIT_REWARD_DATA : 'http://www.atcpu.com/u-index-showcredit',					//积分奖励 数据
+		AT_URL: 'http://www.atcpu.com/bbs-remind-run',									//@好友列表接口
+		TOPIC_TYPIC: 'http://www.atcpu.com/bbs-forum-topictype'							//主题分类
+	}
+};
+</script>
+<script src="http://www.atcpu.com/res/js/dev/wind.js?v=20130227"></script>
+<style>
+.floor_info .operate .dongta {
+	background: url("http://www.atcpu.com/themes/extres/dongta/images/dongta.png") no-repeat scroll -4px 2px transparent;
+	margin-right: 9px;
+	padding-left: 16px;
+}
+</style>
+	<link href="http://www.atcpu.com/themes/site/default/css/dev/forum.css?v=20130227" rel="stylesheet" />
+	<link href="http://www.atcpu.com/res/css/editor_content.css?v=20130227" rel="stylesheet" />
+<style>
+.aPre{
+	cursor:url(http://www.atcpu.com/themes/site/default/images/common/pre.cur),auto;
+}
+.aNext{
+	cursor:url(http://www.atcpu.com/themes/site/default/images/common/next.cur),auto;right:0;
+}
+</style>
+</head>
+<body>
+<style type="text/css">
+</style><div class="wrap">
+	<header class="header_wrap">
+	<div id="J_header" class="header cc">
+		<div class="logo">
+			<a href="http://www.atcpu.com">
+								<!--后台logo上传-->
+				<img src="http://www.atcpu.com/attachment/background/481b812fad535eb.png" alt="灯火互联网">
+							</a>
+		</div>
+		<nav class="nav_wrap">
+			<div class="nav">
+				<ul>
+						<li class="current"><a href="http://www.atcpu.com/bbs-forumlist-run">论坛</a></li>
+						<li class=""><a href="http://www.atcpu.com/special/1">门户</a></li>
+						<li class=""><a href="http://www.atcpu.com/bbs-forum-run">新帖</a></li>
+						<li class=""><a href="http://www.atcpu.com/like-like-run">喜欢</a></li>
+						<li class=""><a href="http://www.atcpu.com/tag-index-run">话题</a></li>
+						<li class=""><a href="http://www.atcpu.com/index.php?m=appcenter" target="_blank">应用</a></li>
+						<li class=""><a href="http://www.atcpu.com/read/8530/1" target="_blank" style="font-weight:bold;">会员</a></li>
+					</ul>
+			</div>
+		</nav>
+		
+
+
+
+
+
+
+
+
+<style>img.J_avatar{
+					border-radius: 20%;
+				}a.J_user_card_show img{
+					border-radius: 20%;
+						}</style>		<div class="header_search" role="search">
+			<form action="http://www.atcpu.com/search-s-run" method="post">
+				<input type="text" id="s" aria-label="搜索关键词" accesskey="s" placeholder="搜索其实很简单" x-webkit-speech speech name="keyword"/>
+				<button type="submit" aria-label="搜索"><span>搜索</span></button>
+			<input type="hidden" name="csrf_token" value="0c05ccf6c04e4d50"/><input type="hidden" name="csrf_token" value="0c05ccf6c04e4d50"/></form>
+		</div>
+		<div class="header_login">
+	
+<style>
+.header_account_wrap{
+	float:left;
+	margin-right:5px;
+}
+.header_account_wrap .hd{
+	display:inline-block;
+	line-height:18px;
+}
+.header_account_wrap .hd span{
+	padding-right:3px;
+	display:inline-block;
+}
+.header_account_wrap .core_menu{
+	margin-top:13px;
+	margin-left:10px;
+}
+.header_account_wrap .core_menu_list{
+	padding:5px !important;
+}
+.header_account_wrap li{
+	margin-bottom:3px;
+}
+.header_account_wrap a{
+	display:inline-block;
+	line-height:23px;
+	height:23px;
+	padding-left:22px;
+	background:url(http://www.atcpu.com/themes/extres/account/images/header_account_icon.png) 0 5px no-repeat;
+    cursor:pointer;
+}
+.header_account_wrap a.account_alipay{
+	background-position:2px -86px;
+	padding-left:22px !important;
+}
+.header_account_wrap a.account_qq{
+	background-position:2px -26px;
+	padding-left:22px !important;
+}
+.header_account_wrap a.account_weibo{
+	background-position:0 -56px;
+	padding-left:22px !important;
+}
+
+.header_account_wrap a.account_taobao{
+	background-position:0 4px;
+	padding-left:22px !important;
+}
+</style>
+
+<div class="header_account_wrap">
+		<a onclick="window.open(&#039;http://www.atcpu.com/index.php?app=account&amp;m=app&amp;c=index&amp;a=login&amp;type=sinaweibo&#039;, &#039;accountLogin&#039;, &#039;height=520, width=850, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no&#039;);" class="account_weibo hd"><span>新浪微博</span></a>
+</div>
+
+
+<script>
+Wind.ready('global.js', function(){
+	Wind.Util.hoverToggle({
+		elem : $('#J_hovertoggle_me'),
+		list : $('#J_hovertoggle_list'),
+		delay : 100
+	});
+});
+</script>
+
+<a rel="nofollow" href="http://www.atcpu.com/u-login-run">登录</a><a rel="nofollow" href="http://www.atcpu.com/u-register-run">注册</a>
+</div>
+	</div>
+</header>
+<div class="tac"><script type="text/javascript" charset="gb2312" src="http://js.adm.cnzz.net/s.php?sid=115062&proid=&fid=80&mid=bbs&floorid=&pid=bbs.read"></script>
+</div>
+	<div class="main_wrap">
+		
+		<div class="bread_crumb">
+			<a href="http://www.atcpu.com/" title="灯火互联网" class="home">首页</a><em>&gt;</em><a href="http://www.atcpu.com/thread/138">下载专区</a><em>&gt;</em><a href="http://www.atcpu.com/thread/80">书籍下载</a><em>&gt;</em><a href="http://www.atcpu.com/read/13168">unix入门初学者教程</a>		</div>
+		
+		<div id="app_test"></div>
+		<div id="cloudwind_read_top"></div>
+		<div class="read_pages_wrap cc">
+						<a rel="nofollow" href="http://www.atcpu.com/bbs-post-reply?tid=13168" data-referer="true" class="btn_replay J_qlogin_trigger">回复</a>
+						<div class="pages" style="margin-right:3px;"><a href="http://www.atcpu.com/thread/80/1" class="pages_pre" rel="nofollow">&laquo; 返回列表</a></div>
+					</div>
+		<input type="hidden" id="js-tid" value="$tid" />
+		<div class="read_page" id="J_posts_list">
+						<a name="0"></a>			<div id="cloudwind_read_readfloor_0"></div>
+<div class="floor cc J_read_floor" id="read_0">
+<table width="100%" style="table-layout:fixed;" class="floor_table">
+	<tr>
+		<td rowspan="2" class="floor_left">
+			<div class="floor_info">
+				<!--头像-->
+				<div class="face">
+					<a href="http://www.atcpu.com/u/3710" class="J_user_card_show" data-uid="3710" target="_blank"><img src="http://www.atcpu.com/windid/attachment/avatar/000/00/37/3710_middle.jpg" class="J_avatar" data-type="middle" alt="灯火互联"></a>
+				</div>
+				<!--用户名-->
+				<div class="name">
+					<span class="man_unol" title="离线"></span><a href="http://www.atcpu.com/u/3710" class="J_user_card_show mr5" data-uid="3710">灯火互联</a>
+									</div>
+				<!--等级-->
+				<div class="level">
+					<div>管理员</div>
+					<img src="http://www.atcpu.com/res/images/level/20.gif" alt="管理员">
+				</div>
+				<!--相关数据-->
+				<ul class="cc integral">
+									<li><em>发帖数</em><a href="http://www.atcpu.com/space-thread-run?uid=3710" target="_blank">33478</a></li>
+										<li><em>QQ</em><span></span></li>
+										<li><em>火币</em><span title="21546枚">21546枚</span></li>
+										<li><em>粉丝</em><a href="http://www.atcpu.com/space-fans-run?uid=3710" target="_blank">1029</a></li>
+										<li><em>关注</em><a href="http://www.atcpu.com/space-follows-run?uid=3710" target="_blank">95</a></li>
+									</ul>
+								<!--发私信加关注-->
+				<div class="operate cc">
+					<a rel="nofollow" href="http://www.atcpu.com/my-follow-add?uid=3710" data-uid="3710" class="follow J_read_follow J_qlogin_trigger">加关注</a>
+					<a rel="nofollow" href="http://www.atcpu.com/message-message-pop?username=%B5%C6%BB%F0%BB%A5%C1%AA" class="message J_send_msg_pop J_qlogin_trigger" data-name="灯火互联">写私信</a>
+					<a rel="nofollow" href="http://www.atcpu.com/app-index-act?app=dongta" class="dongta J_qlogin_trigger J_dongta_act" data-uid="3710"><em></em>打招呼</a>				</div>
+				
+	<div class="medal">
+		<ul class="cc">
+						<li><a rel="nofollow" href="http://www.atcpu.com/medal-index-run"><img src="http://www.atcpu.com/res/images/medal/small/zhongshenchengjiu.png" title="终身成就奖" width="30" height="30" alt="终身成就奖" /></a></li>
+						<li><a rel="nofollow" href="http://www.atcpu.com/medal-index-run"><img src="http://www.atcpu.com/res/images/medal/small/yuanchuangdaren.png" title="原创达人" width="30" height="30" alt="原创达人" /></a></li>
+						<li><a rel="nofollow" href="http://www.atcpu.com/medal-index-run"><img src="http://www.atcpu.com/res/images/medal/small/zuiaishafa.png" title="最爱沙发" width="30" height="30" alt="最爱沙发" /></a></li>
+						<li><a rel="nofollow" href="http://www.atcpu.com/medal-index-run"><img src="http://www.atcpu.com/res/images/medal/small/rexinhuiyuan.png" title="忠实会员" width="30" height="30" alt="忠实会员" /></a></li>
+						<li><a rel="nofollow" href="http://www.atcpu.com/medal-index-run"><img src="http://www.atcpu.com/res/images/medal/small/shequjumin.png" title="社区居民" width="30" height="30" alt="社区居民" /></a></li>
+						<li><a rel="nofollow" href="http://www.atcpu.com/medal-index-run"><img src="http://www.atcpu.com/res/images/medal/small/guanshuidashi.png" title="灌水天才奖" width="30" height="30" alt="灌水天才奖" /></a></li>
+						<li><a rel="nofollow" href="http://www.atcpu.com/medal-index-run"><img src="http://www.atcpu.com/res/images/medal/small/tietudashi.png" title="贴图大师奖" width="30" height="30" alt="贴图大师奖" /></a></li>
+						<li><a rel="nofollow" href="http://www.atcpu.com/medal-index-run"><img src="http://www.atcpu.com/res/images/medal/small/yuanchuangxianfeng.png" title="原创先锋奖" width="30" height="30" alt="原创先锋奖" /></a></li>
+						<li><a rel="nofollow" href="http://www.atcpu.com/medal-index-run"><img src="http://www.atcpu.com/res/images/medal/small/teshugongxian.png" title="特殊贡献奖" width="30" height="30" alt="特殊贡献奖" /></a></li>
+						<li><a rel="nofollow" href="http://www.atcpu.com/medal-index-run"><img src="http://www.atcpu.com/res/images/medal/small/xuanchuandashi.png" title="宣传大使奖" width="30" height="30" alt="宣传大使奖" /></a></li>
+						<li><a rel="nofollow" href="http://www.atcpu.com/medal-index-run"><img src="http://www.atcpu.com/res/images/medal/small/youxiubanzhu.png" title="优秀斑竹奖" width="30" height="30" alt="优秀斑竹奖" /></a></li>
+						<li><a rel="nofollow" href="http://www.atcpu.com/medal-index-run"><img src="http://www.atcpu.com/res/images/medal/small/shequmingxing.png" title="社区明星" width="30" height="30" alt="社区明星" /></a></li>
+					</ul>
+	</div>
+
+				<div id="eatfjr" class="box_wrap design_layout_style J_mod_layout_none" role="structure_eatfjr" data-lcm="100">
+<h2 style="DISPLAY: none" class="design_layout_hd cc J_layout_hd" role="titlebar"><span>100%</span></h2>
+<div class="design_layout_ct J_layout_item">
+<div id="J_mod_155" class="mod_box J_mod_box" data-model="html" data-id="155"><script type="text/javascript">
+/*229*90，创建于2013-5-9*/
+var cpro_id = "u1280643";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script></div></div></div>
+								<!--广告位-->
+				
+				<!--信息栏结束-->
+			</div>
+		</td>
+		<td class="box_wrap floor_right">
+			<div class="fl"><div class="floor_arrow"><em></em><span></span></div></div>
+						<div class="floor_title cc">
+				<div class="post_num">
+					<span class="hits">阅读：<em>4093</em></span><span class="replies">回复：<em id="topicRepliesNum">10</em></span>
+				</div>
+				<h1 id="J_post_title"><a href="http://www.atcpu.com/thread/80?type=30">[unix类书籍]</a>unix入门初学者教程</h1>
+				<span class="floor_honor posts_icon">
+					<i class="icon_topichot" title="热门"></i>				</span>
+			</div>
+						<div class="c"></div>
+			<div class="floor_top_tips cc">
+				<div style="position:relative;"><span class="lou J_floor_copy" title="复制此楼地址"  data-type="main" data-hash="read_0">楼主<sup>#</sup></span></div>
+								<a href="javascript:;" class="more_down" id="J_read_moredown">更多</a>
+				<div id="J_read_moredown_list" class="core_menu" style="display:none;">
+					<ul class="core_menu_list">
+						<li><a rel="nofollow" href="http://www.atcpu.com/read/13168?uid=3710">只看楼主</a></li>
+						<li><a rel="nofollow" href="http://www.atcpu.com/read/13168?desc=1">倒序阅读</a></li>
+					</ul>
+				</div>
+								<span class="fl">发布于：2011-10-27 19:55				</span>
+			</div>
+						<div id="J_read_main">
+								<div id="J_read_tag_wrap" class="read_tag_list">
+									</div>
+				<!--=========话题编辑=========-->
+				<div id="J_read_tag_edit" class="mb10 cc" style="display:none;">
+					<form id="J_read_tag_form" action="http://www.atcpu.com/tag-index-editReadTag?tid=13168" method="post">
+						<div class="user_select_input J_user_tag_wrap fl mr10">
+							<ul class="fl J_user_tag_ul"></ul>
+							<input class="J_user_tag_input" data-name="tagnames[]" type="text" />
+						</div>
+						<button id="J_read_tag_sub" class="btn btn_submit">保存</button>
+					<input type="hidden" name="csrf_token" value="0c05ccf6c04e4d50"/><input type="hidden" name="csrf_token" value="0c05ccf6c04e4d50"/></form>
+				</div>
+								<div id="stfgdt" class="box_wrap design_layout_style J_mod_layout_none" role="structure_stfgdt" data-lcm="100">
+<h2 style="DISPLAY: none" class="design_layout_hd cc J_layout_hd" role="titlebar"><span>100%</span></h2>
+<div class="design_layout_ct J_layout_item">
+<div id="J_mod_157" class="mod_box J_mod_box" data-model="html" data-id="157"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 55 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-4880740553347251"
+     data-ad-slot="7652168111"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+
+<div role="structure_gstlxz" data-lcm="100" class="box_wrap design_layout_style J_mod_layout_none" id="gstlxz">			<h2 role="titlebar" class="design_layout_hd cc J_layout_hd" style="display: none;"><span>100%</span></h2>			<div class="design_layout_ct J_layout_item"><div id="J_mod_182" style="" data-id="182" data-model="html" class="mod_box J_mod_box"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- df -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:15px"
+     data-ad-client="ca-pub-4880740553347251"
+     data-ad-slot="5351405798"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></div><div role="structure_muxyuf" data-lcm="100" class="box_wrap design_layout_style J_mod_layout_none" id="muxyuf">			<h2 role="titlebar" class="design_layout_hd cc J_layout_hd" style="display: none;"><span>100%</span></h2>			<div class="design_layout_ct J_layout_item"></div></div></div></div>
+								<div class="fr">
+				<!--开始右侧广告位-->
+					
+				<!--结束右侧广告位-->
+				</div>
+				<div class="editor_content">
+					<span style="background-color:#ff0000 "><font size="3"><b>回复可见下载地址</b></font></span> <br /><br /><br /><b><div class="content_hidden" id="J_need_reply">亲！本部分内容设定了隐藏,需要回复后才能看到. 请先注册! 再回帖! 免费下载上千GB的课程.</div></b>				</div>
+							</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="box_wrap floor_bottom" valign="bottom">
+		
+<div class="baidushare_lou mb5 cc" style="margin-top:20px;">
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_bdhome"></a>
+<a class="bds_hi"></a>
+<a class="bds_sqq"></a>
+<a class="bds_renren"></a>
+<span class="bds_more">更多</span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=626292" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END --></div>
+
+			<div class="read_appbtn_wrap">
+								<a role="button" rel="nofollow" href="http://www.atcpu.com/like-mylike-doLike?typeid=1&fromid=13168" data-tid="13168" data-pid="0" data-fid="80" class="icon_read_like J_like_btn J_qlogin_trigger" data-role="main">
+					<span>喜欢</span><em class="J_like_count">0</em>
+				</a>
+				
+
+
+<style>
+/*评分按钮*/
+.read_appbtn_wrap{
+	height:30px;
+	padding:20px 0;
+	position:relative;
+}
+.icon_read_like{
+	margin:0;
+	position:absolute;
+	left:50%;
+	margin-left:-120px;
+}
+.icon_read_mark{
+	left:50%;
+	margin-left:5px;
+	position:absolute;
+	width:115px;
+	height:25px;
+	background:url(http://www.atcpu.com/themes/extres/mark/images/icon_read_mark.png) no-repeat;
+	display:block;
+	line-height:25px;
+	cursor:pointer;
+	overflow:hidden;
+}
+.icon_read_mark span{
+	float:left;
+	display:block;
+	width:0;
+	height:0;
+	overflow:hidden;
+	font:0/0 Arial;
+	padding:0;
+	margin:0;
+}
+.icon_read_mark em{
+	float:right;
+	width:47px;
+	height:25px;
+	color:#3982c2;
+	text-align:center;
+	font-weight:700;
+	text-indent:0;
+	overflow:hidden;
+	display:block;
+}
+.icon_read_mark:hover{
+	filter:alpha(opacity=90);
+	-moz-opacity:0.9;
+	opacity:0.9;
+	text-decoration:none;
+}
+</style>
+<a role="button" rel="nofollow" href="#" data-pid="0" data-uri="http://www.atcpu.com/app-mark-mark?tid=13168&pid=0&app=mark" class="icon_read_mark J_plugin_read_mark" id=""><span>评分</span><em>0</em></a>
+<script>
+Wind.ready('global.js', function(){
+	Wind.js('http://www.atcpu.com/themes/extres/mark/js/mark.min.js?v=' + GV.JS_VERSION);
+});
+</script>
+
+			</div>
+						<div style="display:none" id="J_read_like_list" class="read_like_list cc">
+				<h4 class="J_read_like_tit">最新喜欢：</h4>
+							</div>
+						<div id="app_read_floor_0"></div>
+						<div id="cloudwind_read_content"></div>
+						<div class="signature" style="max-height:200px;maxHeight:200px;"><table width="100%"><tr><td><a href="http://item.taobao.com/item.htm?id=14339172012 " target="_blank"><font size=\"20\"><span style=\"color:#8A2BE2 \">本站会员购买</span></a></td></tr></table></div>
+						<div id="pyamfz" class="box_wrap design_layout_style J_mod_layout_none" role="structure_pyamfz" data-lcm="100">
+<h2 style="DISPLAY: none" class="design_layout_hd cc J_layout_hd" role="titlebar"><span>100%</span></h2>
+<div class="design_layout_ct J_layout_item">
+<div id="J_mod_156" class="mod_box J_mod_box" data-model="html" data-id="156"><script type="text/javascript">
+/*自定义标签云，创建于2013-7-30*/
+var cpro_id = "u1330602";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script></div></div></div>
+				
+			<div class="floor_bottom_tips cc">
+								<span class="fr">
+									</span>
+								<a rel="nofollow" href="#floor_reply" data-hash="floor_reply" class="a_reply" id="J_readreply_main">回复</a>
+							</div>
+			<div style="display:none;" class="J_reply_wrap" id="J_reply_wrap_0"><div class="pop_loading"></div></div>
+		</td>
+	</tr>
+</table>
+</div>
+<div id="juizbl" class="box_wrap design_layout_style J_mod_layout_none" role="structure_juizbl" data-lcm="100">
+<h2 style="DISPLAY: none" class="design_layout_hd cc J_layout_hd" role="titlebar"><span>100%</span></h2>
+<div class="design_layout_ct J_layout_item">
+<div id="J_mod_168" class="mod_box J_mod_box" data-model="html" data-id="168"><script type="text/javascript">
+/*120*270，创建于2013-5-17*/
+var cpro_id = "u1285784";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script></div></div></div>
+			<a name="14885"></a>			<div id="cloudwind_read_readfloor_14885"></div>
+<div class="floor cc J_read_floor" id="read_14885">
+<table width="100%" style="table-layout:fixed;" class="floor_table">
+	<tr>
+		<td rowspan="2" class="floor_left">
+			<div class="floor_info">
+				<!--头像-->
+				<div class="face">
+					<a href="http://www.atcpu.com/u/9" class="J_user_card_show" data-uid="9" target="_blank"><img src="http://www.atcpu.com/windid/attachment/avatar/000/00/00/9_middle.jpg" class="J_avatar" data-type="middle" alt="小白龙"></a>
+				</div>
+				<!--用户名-->
+				<div class="name">
+					<span class="man_unol" title="离线"></span><a href="http://www.atcpu.com/u/9" class="J_user_card_show mr5" data-uid="9">小白龙</a>
+									</div>
+				<!--等级-->
+				<div class="level">
+					<div>侠客</div>
+					<img src="http://www.atcpu.com/res/images/level/9.gif" alt="侠客">
+				</div>
+				<!--相关数据-->
+				<ul class="cc integral">
+									<li><em>发帖数</em><a href="http://www.atcpu.com/space-thread-run?uid=9" target="_blank">99</a></li>
+										<li><em>QQ</em><span></span></li>
+										<li><em>火币</em><span title="111枚">111枚</span></li>
+										<li><em>粉丝</em><a href="http://www.atcpu.com/space-fans-run?uid=9" target="_blank">3</a></li>
+										<li><em>关注</em><a href="http://www.atcpu.com/space-follows-run?uid=9" target="_blank">1</a></li>
+									</ul>
+								<!--发私信加关注-->
+				<div class="operate cc">
+					<a rel="nofollow" href="http://www.atcpu.com/my-follow-add?uid=9" data-uid="9" class="follow J_read_follow J_qlogin_trigger">加关注</a>
+					<a rel="nofollow" href="http://www.atcpu.com/message-message-pop?username=%D0%A1%B0%D7%C1%FA" class="message J_send_msg_pop J_qlogin_trigger" data-name="小白龙">写私信</a>
+					<a rel="nofollow" href="http://www.atcpu.com/app-index-act?app=dongta" class="dongta J_qlogin_trigger J_dongta_act" data-uid="9"><em></em>打招呼</a>				</div>
+				
+	<div class="medal">
+		<ul class="cc">
+						<li><a rel="nofollow" href="http://www.atcpu.com/medal-index-run"><img src="http://www.atcpu.com/res/images/medal/small/shequjumin.png" title="社区居民" width="30" height="30" alt="社区居民" /></a></li>
+					</ul>
+	</div>
+
+				<!--广告位-->
+				
+				<!--信息栏结束-->
+			</div>
+		</td>
+		<td class="box_wrap floor_right">
+			<div class="fl"><div class="floor_arrow"><em></em><span></span></div></div>
+						<div class="c"></div>
+			<div class="floor_top_tips cc">
+				<div style="position:relative;"><span class="lou J_floor_copy" title="复制此楼地址"  data-hash="read_14885">沙发<sup>#</sup></span></div>
+								<span class="fl">发布于：2011-10-28 03:03				</span>
+			</div>
+						<div id="J_read_main">
+								<div class="fr">
+				<!--开始右侧广告位-->
+					
+				<!--结束右侧广告位-->
+				</div>
+				<div class="editor_content">
+										<div class="inside_title">回 楼主(灯火互联) 的帖子</div>
+					111111111111111111111111111111				</div>
+							</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="box_wrap floor_bottom" valign="bottom">
+					<div id="app_read_floor_1"></div>
+				
+			<div class="floor_bottom_tips cc">
+								<span class="fr">
+									</span>
+								<a rel="nofollow" href="http://www.atcpu.com/bbs-post-fastreply?tid=13168&pid=14885" data-pid="14885" class="a_reply J_read_reply" data-topped="false">回复<span style="display:none">(0)</span></a>
+								<a rel="nofollow" href="http://www.atcpu.com/like-mylike-doLike?typeid=2&fromid=14885" data-tid="13168" data-pid="14885" data-fid="80" class="a_like J_like_btn J_qlogin_trigger">喜欢</a><span style="display:none">(<a class="J_like_user_btn a_like_num" data-pid="14885" href="http://www.atcpu.com/like-like-getLast?typeid=2&fromid=14885">0</a>)</span>
+				
+			
+&nbsp;&nbsp;&nbsp;&nbsp;<a role="button" rel="nofollow" href="#" data-pid="14885" data-uri="http://www.atcpu.com/app-mark-mark?tid=13168&pid=14885&app=mark" class="J_plugin_read_mark" id=""><span>评分</span></a>
+<script>
+Wind.ready('global.js', function(){
+	Wind.js('http://www.atcpu.com/themes/extres/mark/js/mark.min.js?v=' + GV.JS_VERSION);
+});
+</script>
+
+			</div>
+			<div style="display:none;" class="J_reply_wrap" id="J_reply_wrap_14885"><div class="pop_loading"></div></div>
+		</td>
+	</tr>
+</table>
+</div>
+			<a name="15083"></a>			<div id="cloudwind_read_readfloor_15083"></div>
+<div class="floor cc J_read_floor" id="read_15083">
+<table width="100%" style="table-layout:fixed;" class="floor_table">
+	<tr>
+		<td rowspan="2" class="floor_left">
+			<div class="floor_info">
+				<!--头像-->
+				<div class="face">
+					<a href="http://www.atcpu.com/u/5520" class="J_user_card_show" data-uid="5520" target="_blank"><img src="http://www.atcpu.com/windid/attachment/avatar/000/00/55/5520_middle.jpg" class="J_avatar" data-type="middle" alt="guo.201034"></a>
+				</div>
+				<!--用户名-->
+				<div class="name">
+					<span class="man_unol" title="离线"></span><a href="http://www.atcpu.com/u/5520" class="J_user_card_show mr5" data-uid="5520">guo.201034</a>
+									</div>
+				<!--等级-->
+				<div class="level">
+					<div>新手上路</div>
+					<img src="http://www.atcpu.com/res/images/level/3.gif" alt="新手上路">
+				</div>
+				<!--相关数据-->
+				<ul class="cc integral">
+									<li><em>发帖数</em><a href="http://www.atcpu.com/space-thread-run?uid=5520" target="_blank">1</a></li>
+										<li><em>QQ</em><span></span></li>
+										<li><em>火币</em><span title="10枚">10枚</span></li>
+										<li><em>粉丝</em><a href="http://www.atcpu.com/space-fans-run?uid=5520" target="_blank">5</a></li>
+										<li><em>关注</em><a href="http://www.atcpu.com/space-follows-run?uid=5520" target="_blank">10</a></li>
+									</ul>
+								<!--发私信加关注-->
+				<div class="operate cc">
+					<a rel="nofollow" href="http://www.atcpu.com/my-follow-add?uid=5520" data-uid="5520" class="follow J_read_follow J_qlogin_trigger">加关注</a>
+					<a rel="nofollow" href="http://www.atcpu.com/message-message-pop?username=guo.201034" class="message J_send_msg_pop J_qlogin_trigger" data-name="guo.201034">写私信</a>
+					<a rel="nofollow" href="http://www.atcpu.com/app-index-act?app=dongta" class="dongta J_qlogin_trigger J_dongta_act" data-uid="5520"><em></em>打招呼</a>				</div>
+								<!--广告位-->
+				
+				<!--信息栏结束-->
+			</div>
+		</td>
+		<td class="box_wrap floor_right">
+			<div class="fl"><div class="floor_arrow"><em></em><span></span></div></div>
+						<div class="c"></div>
+			<div class="floor_top_tips cc">
+				<div style="position:relative;"><span class="lou J_floor_copy" title="复制此楼地址"  data-hash="read_15083">板凳<sup>#</sup></span></div>
+								<span class="fl">发布于：2011-10-29 15:26				</span>
+			</div>
+						<div id="J_read_main">
+								<div class="fr">
+				<!--开始右侧广告位-->
+					
+				<!--结束右侧广告位-->
+				</div>
+				<div class="editor_content">
+										<div class="inside_title">回 1楼(小白龙) 的帖子</div>
+					版主真厉害。。。				</div>
+							</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="box_wrap floor_bottom" valign="bottom">
+					<div id="app_read_floor_2"></div>
+				
+			<div class="floor_bottom_tips cc">
+								<span class="fr">
+									</span>
+								<a rel="nofollow" href="http://www.atcpu.com/bbs-post-fastreply?tid=13168&pid=15083" data-pid="15083" class="a_reply J_read_reply" data-topped="false">回复<span style="display:none">(0)</span></a>
+								<a rel="nofollow" href="http://www.atcpu.com/like-mylike-doLike?typeid=2&fromid=15083" data-tid="13168" data-pid="15083" data-fid="80" class="a_like J_like_btn J_qlogin_trigger">喜欢</a><span style="display:none">(<a class="J_like_user_btn a_like_num" data-pid="15083" href="http://www.atcpu.com/like-like-getLast?typeid=2&fromid=15083">0</a>)</span>
+				
+			
+&nbsp;&nbsp;&nbsp;&nbsp;<a role="button" rel="nofollow" href="#" data-pid="15083" data-uri="http://www.atcpu.com/app-mark-mark?tid=13168&pid=15083&app=mark" class="J_plugin_read_mark" id=""><span>评分</span></a>
+<script>
+Wind.ready('global.js', function(){
+	Wind.js('http://www.atcpu.com/themes/extres/mark/js/mark.min.js?v=' + GV.JS_VERSION);
+});
+</script>
+
+			</div>
+			<div style="display:none;" class="J_reply_wrap" id="J_reply_wrap_15083"><div class="pop_loading"></div></div>
+		</td>
+	</tr>
+</table>
+</div>
+			<a name="18729"></a>			<div id="cloudwind_read_readfloor_18729"></div>
+<div class="floor cc J_read_floor" id="read_18729">
+<table width="100%" style="table-layout:fixed;" class="floor_table">
+	<tr>
+		<td rowspan="2" class="floor_left">
+			<div class="floor_info">
+				<!--头像-->
+				<div class="face">
+					<a href="http://www.atcpu.com/u/5983" class="J_user_card_show" data-uid="5983" target="_blank"><img src="http://www.atcpu.com/windid/attachment/avatar/000/00/59/5983_middle.jpg" class="J_avatar" data-type="middle" alt="梦想"></a>
+				</div>
+				<!--用户名-->
+				<div class="name">
+					<span class="man_unol" title="离线"></span><a href="http://www.atcpu.com/u/5983" class="J_user_card_show mr5" data-uid="5983">梦想</a>
+									</div>
+				<!--等级-->
+				<div class="level">
+					<div>新手上路</div>
+					<img src="http://www.atcpu.com/res/images/level/3.gif" alt="新手上路">
+				</div>
+				<!--相关数据-->
+				<ul class="cc integral">
+									<li><em>发帖数</em><a href="http://www.atcpu.com/space-thread-run?uid=5983" target="_blank">20</a></li>
+										<li><em>QQ</em><span></span></li>
+										<li><em>火币</em><span title="31枚">31枚</span></li>
+										<li><em>粉丝</em><a href="http://www.atcpu.com/space-fans-run?uid=5983" target="_blank">0</a></li>
+										<li><em>关注</em><a href="http://www.atcpu.com/space-follows-run?uid=5983" target="_blank">0</a></li>
+									</ul>
+								<!--发私信加关注-->
+				<div class="operate cc">
+					<a rel="nofollow" href="http://www.atcpu.com/my-follow-add?uid=5983" data-uid="5983" class="follow J_read_follow J_qlogin_trigger">加关注</a>
+					<a rel="nofollow" href="http://www.atcpu.com/message-message-pop?username=%C3%CE%CF%EB" class="message J_send_msg_pop J_qlogin_trigger" data-name="梦想">写私信</a>
+					<a rel="nofollow" href="http://www.atcpu.com/app-index-act?app=dongta" class="dongta J_qlogin_trigger J_dongta_act" data-uid="5983"><em></em>打招呼</a>				</div>
+								<!--广告位-->
+				
+				<!--信息栏结束-->
+			</div>
+		</td>
+		<td class="box_wrap floor_right">
+			<div class="fl"><div class="floor_arrow"><em></em><span></span></div></div>
+						<div class="c"></div>
+			<div class="floor_top_tips cc">
+				<div style="position:relative;"><span class="lou J_floor_copy" title="复制此楼地址"  data-hash="read_18729">地板<sup>#</sup></span></div>
+								<span class="fl">发布于：2011-12-10 22:47				</span>
+			</div>
+						<div id="J_read_main">
+								<div class="fr">
+				<!--开始右侧广告位-->
+					
+				<!--结束右侧广告位-->
+				</div>
+				<div class="editor_content">
+					&nbsp;<img src="http://www.atcpu.com/res/images/emotion/de/1.gif" /> &nbsp;<img src="http://www.atcpu.com/res/images/emotion/de/1.gif" /> &nbsp;<img src="http://www.atcpu.com/res/images/emotion/de/1.gif" /> 				</div>
+							</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="box_wrap floor_bottom" valign="bottom">
+					<div id="app_read_floor_3"></div>
+				
+			<div class="floor_bottom_tips cc">
+								<span class="fr">
+									</span>
+								<a rel="nofollow" href="http://www.atcpu.com/bbs-post-fastreply?tid=13168&pid=18729" data-pid="18729" class="a_reply J_read_reply" data-topped="false">回复<span style="display:none">(0)</span></a>
+								<a rel="nofollow" href="http://www.atcpu.com/like-mylike-doLike?typeid=2&fromid=18729" data-tid="13168" data-pid="18729" data-fid="80" class="a_like J_like_btn J_qlogin_trigger">喜欢</a><span style="display:none">(<a class="J_like_user_btn a_like_num" data-pid="18729" href="http://www.atcpu.com/like-like-getLast?typeid=2&fromid=18729">0</a>)</span>
+				
+			
+&nbsp;&nbsp;&nbsp;&nbsp;<a role="button" rel="nofollow" href="#" data-pid="18729" data-uri="http://www.atcpu.com/app-mark-mark?tid=13168&pid=18729&app=mark" class="J_plugin_read_mark" id=""><span>评分</span></a>
+<script>
+Wind.ready('global.js', function(){
+	Wind.js('http://www.atcpu.com/themes/extres/mark/js/mark.min.js?v=' + GV.JS_VERSION);
+});
+</script>
+
+			</div>
+			<div style="display:none;" class="J_reply_wrap" id="J_reply_wrap_18729"><div class="pop_loading"></div></div>
+		</td>
+	</tr>
+</table>
+</div>
+			<a name="18741"></a>			<div id="cloudwind_read_readfloor_18741"></div>
+<div class="floor cc J_read_floor" id="read_18741">
+<table width="100%" style="table-layout:fixed;" class="floor_table">
+	<tr>
+		<td rowspan="2" class="floor_left">
+			<div class="floor_info">
+				<!--头像-->
+				<div class="face">
+					<a href="http://www.atcpu.com/u/5938" class="J_user_card_show" data-uid="5938" target="_blank"><img src="http://www.atcpu.com/windid/attachment/avatar/000/00/59/5938_middle.jpg" class="J_avatar" data-type="middle" alt="挑战记忆"></a>
+				</div>
+				<!--用户名-->
+				<div class="name">
+					<span class="man_unol" title="离线"></span><a href="http://www.atcpu.com/u/5938" class="J_user_card_show mr5" data-uid="5938">挑战记忆</a>
+									</div>
+				<!--等级-->
+				<div class="level">
+					<div>侠客</div>
+					<img src="http://www.atcpu.com/res/images/level/9.gif" alt="侠客">
+				</div>
+				<!--相关数据-->
+				<ul class="cc integral">
+									<li><em>发帖数</em><a href="http://www.atcpu.com/space-thread-run?uid=5938" target="_blank">73</a></li>
+										<li><em>QQ</em><span></span></li>
+										<li><em>火币</em><span title="74枚">74枚</span></li>
+										<li><em>粉丝</em><a href="http://www.atcpu.com/space-fans-run?uid=5938" target="_blank">0</a></li>
+										<li><em>关注</em><a href="http://www.atcpu.com/space-follows-run?uid=5938" target="_blank">0</a></li>
+									</ul>
+								<!--发私信加关注-->
+				<div class="operate cc">
+					<a rel="nofollow" href="http://www.atcpu.com/my-follow-add?uid=5938" data-uid="5938" class="follow J_read_follow J_qlogin_trigger">加关注</a>
+					<a rel="nofollow" href="http://www.atcpu.com/message-message-pop?username=%CC%F4%D5%BD%BC%C7%D2%E4" class="message J_send_msg_pop J_qlogin_trigger" data-name="挑战记忆">写私信</a>
+					<a rel="nofollow" href="http://www.atcpu.com/app-index-act?app=dongta" class="dongta J_qlogin_trigger J_dongta_act" data-uid="5938"><em></em>打招呼</a>				</div>
+								<!--广告位-->
+				
+				<!--信息栏结束-->
+			</div>
+		</td>
+		<td class="box_wrap floor_right">
+			<div class="fl"><div class="floor_arrow"><em></em><span></span></div></div>
+						<div class="c"></div>
+			<div class="floor_top_tips cc">
+				<div style="position:relative;"><span class="lou J_floor_copy" title="复制此楼地址"  data-hash="read_18741">4楼<sup>#</sup></span></div>
+								<span class="fl">发布于：2011-12-11 00:41				</span>
+			</div>
+						<div id="J_read_main">
+								<div class="fr">
+				<!--开始右侧广告位-->
+					
+				<!--结束右侧广告位-->
+				</div>
+				<div class="editor_content">
+					&nbsp;<img src="http://www.atcpu.com/res/images/emotion/de/1.gif" /> &nbsp;<img src="http://www.atcpu.com/res/images/emotion/de/1.gif" /> &nbsp;<img src="http://www.atcpu.com/res/images/emotion/de/1.gif" /> 				</div>
+							</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="box_wrap floor_bottom" valign="bottom">
+					<div id="app_read_floor_4"></div>
+				
+			<div class="floor_bottom_tips cc">
+								<span class="fr">
+									</span>
+								<a rel="nofollow" href="http://www.atcpu.com/bbs-post-fastreply?tid=13168&pid=18741" data-pid="18741" class="a_reply J_read_reply" data-topped="false">回复<span style="display:none">(0)</span></a>
+								<a rel="nofollow" href="http://www.atcpu.com/like-mylike-doLike?typeid=2&fromid=18741" data-tid="13168" data-pid="18741" data-fid="80" class="a_like J_like_btn J_qlogin_trigger">喜欢</a><span style="display:none">(<a class="J_like_user_btn a_like_num" data-pid="18741" href="http://www.atcpu.com/like-like-getLast?typeid=2&fromid=18741">0</a>)</span>
+				
+			
+&nbsp;&nbsp;&nbsp;&nbsp;<a role="button" rel="nofollow" href="#" data-pid="18741" data-uri="http://www.atcpu.com/app-mark-mark?tid=13168&pid=18741&app=mark" class="J_plugin_read_mark" id=""><span>评分</span></a>
+<script>
+Wind.ready('global.js', function(){
+	Wind.js('http://www.atcpu.com/themes/extres/mark/js/mark.min.js?v=' + GV.JS_VERSION);
+});
+</script>
+
+			</div>
+			<div style="display:none;" class="J_reply_wrap" id="J_reply_wrap_18741"><div class="pop_loading"></div></div>
+		</td>
+	</tr>
+</table>
+</div>
+			<a name="21665"></a>			<div id="cloudwind_read_readfloor_21665"></div>
+<div class="floor cc J_read_floor" id="read_21665">
+<table width="100%" style="table-layout:fixed;" class="floor_table">
+	<tr>
+		<td rowspan="2" class="floor_left">
+			<div class="floor_info">
+				<!--头像-->
+				<div class="face">
+					<a href="http://www.atcpu.com/u/6507" class="J_user_card_show" data-uid="6507" target="_blank"><img src="http://www.atcpu.com/windid/attachment/avatar/000/00/65/6507_middle.jpg" class="J_avatar" data-type="middle" alt="likunqin"></a>
+				</div>
+				<!--用户名-->
+				<div class="name">
+					<span class="man_unol" title="离线"></span><a href="http://www.atcpu.com/u/6507" class="J_user_card_show mr5" data-uid="6507">likunqin</a>
+									</div>
+				<!--等级-->
+				<div class="level">
+					<div>新手上路</div>
+					<img src="http://www.atcpu.com/res/images/level/3.gif" alt="新手上路">
+				</div>
+				<!--相关数据-->
+				<ul class="cc integral">
+									<li><em>发帖数</em><a href="http://www.atcpu.com/space-thread-run?uid=6507" target="_blank">4</a></li>
+										<li><em>QQ</em><span></span></li>
+										<li><em>火币</em><span title="5枚">5枚</span></li>
+										<li><em>粉丝</em><a href="http://www.atcpu.com/space-fans-run?uid=6507" target="_blank">0</a></li>
+										<li><em>关注</em><a href="http://www.atcpu.com/space-follows-run?uid=6507" target="_blank">0</a></li>
+									</ul>
+								<!--发私信加关注-->
+				<div class="operate cc">
+					<a rel="nofollow" href="http://www.atcpu.com/my-follow-add?uid=6507" data-uid="6507" class="follow J_read_follow J_qlogin_trigger">加关注</a>
+					<a rel="nofollow" href="http://www.atcpu.com/message-message-pop?username=likunqin" class="message J_send_msg_pop J_qlogin_trigger" data-name="likunqin">写私信</a>
+					<a rel="nofollow" href="http://www.atcpu.com/app-index-act?app=dongta" class="dongta J_qlogin_trigger J_dongta_act" data-uid="6507"><em></em>打招呼</a>				</div>
+								<!--广告位-->
+				
+				<!--信息栏结束-->
+			</div>
+		</td>
+		<td class="box_wrap floor_right">
+			<div class="fl"><div class="floor_arrow"><em></em><span></span></div></div>
+						<div class="c"></div>
+			<div class="floor_top_tips cc">
+				<div style="position:relative;"><span class="lou J_floor_copy" title="复制此楼地址"  data-hash="read_21665">5楼<sup>#</sup></span></div>
+								<span class="fl">发布于：2012-09-30 19:08				</span>
+			</div>
+						<div id="J_read_main">
+								<div class="fr">
+				<!--开始右侧广告位-->
+					
+				<!--结束右侧广告位-->
+				</div>
+				<div class="editor_content">
+					正在找的好东东呢！				</div>
+							</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="box_wrap floor_bottom" valign="bottom">
+					<div id="app_read_floor_5"></div>
+				
+			<div class="floor_bottom_tips cc">
+								<span class="fr">
+									</span>
+								<a rel="nofollow" href="http://www.atcpu.com/bbs-post-fastreply?tid=13168&pid=21665" data-pid="21665" class="a_reply J_read_reply" data-topped="false">回复<span style="display:none">(0)</span></a>
+								<a rel="nofollow" href="http://www.atcpu.com/like-mylike-doLike?typeid=2&fromid=21665" data-tid="13168" data-pid="21665" data-fid="80" class="a_like J_like_btn J_qlogin_trigger">喜欢</a><span style="display:none">(<a class="J_like_user_btn a_like_num" data-pid="21665" href="http://www.atcpu.com/like-like-getLast?typeid=2&fromid=21665">0</a>)</span>
+				
+			
+&nbsp;&nbsp;&nbsp;&nbsp;<a role="button" rel="nofollow" href="#" data-pid="21665" data-uri="http://www.atcpu.com/app-mark-mark?tid=13168&pid=21665&app=mark" class="J_plugin_read_mark" id=""><span>评分</span></a>
+<script>
+Wind.ready('global.js', function(){
+	Wind.js('http://www.atcpu.com/themes/extres/mark/js/mark.min.js?v=' + GV.JS_VERSION);
+});
+</script>
+
+			</div>
+			<div style="display:none;" class="J_reply_wrap" id="J_reply_wrap_21665"><div class="pop_loading"></div></div>
+		</td>
+	</tr>
+</table>
+</div>
+			<a name="37946"></a>			<div id="cloudwind_read_readfloor_37946"></div>
+<div class="floor cc J_read_floor" id="read_37946">
+<table width="100%" style="table-layout:fixed;" class="floor_table">
+	<tr>
+		<td rowspan="2" class="floor_left">
+			<div class="floor_info">
+				<!--头像-->
+				<div class="face">
+					<a href="http://www.atcpu.com/u/9497" class="J_user_card_show" data-uid="9497" target="_blank"><img src="http://www.atcpu.com/windid/attachment/avatar/000/00/94/9497_middle.jpg" class="J_avatar" data-type="middle" alt="rw407508978"></a>
+				</div>
+				<!--用户名-->
+				<div class="name">
+					<span class="man_unol" title="离线"></span><a href="http://www.atcpu.com/u/9497" class="J_user_card_show mr5" data-uid="9497">rw407508978</a>
+									</div>
+				<!--等级-->
+				<div class="level">
+					<div>新手上路</div>
+					<img src="http://www.atcpu.com/res/images/level/3.gif" alt="新手上路">
+				</div>
+				<!--相关数据-->
+				<ul class="cc integral">
+									<li><em>发帖数</em><a href="http://www.atcpu.com/space-thread-run?uid=9497" target="_blank">10</a></li>
+										<li><em>QQ</em><span>407508978</span></li>
+										<li><em>火币</em><span title="25枚">25枚</span></li>
+										<li><em>粉丝</em><a href="http://www.atcpu.com/space-fans-run?uid=9497" target="_blank">0</a></li>
+										<li><em>关注</em><a href="http://www.atcpu.com/space-follows-run?uid=9497" target="_blank">0</a></li>
+									</ul>
+								<!--发私信加关注-->
+				<div class="operate cc">
+					<a rel="nofollow" href="http://www.atcpu.com/my-follow-add?uid=9497" data-uid="9497" class="follow J_read_follow J_qlogin_trigger">加关注</a>
+					<a rel="nofollow" href="http://www.atcpu.com/message-message-pop?username=rw407508978" class="message J_send_msg_pop J_qlogin_trigger" data-name="rw407508978">写私信</a>
+					<a rel="nofollow" href="http://www.atcpu.com/app-index-act?app=dongta" class="dongta J_qlogin_trigger J_dongta_act" data-uid="9497"><em></em>打招呼</a>				</div>
+								<!--广告位-->
+				
+				<!--信息栏结束-->
+			</div>
+		</td>
+		<td class="box_wrap floor_right">
+			<div class="fl"><div class="floor_arrow"><em></em><span></span></div></div>
+						<div class="c"></div>
+			<div class="floor_top_tips cc">
+				<div style="position:relative;"><span class="lou J_floor_copy" title="复制此楼地址"  data-hash="read_37946">6楼<sup>#</sup></span></div>
+								<span class="fl">发布于：2013-06-02 00:49				</span>
+			</div>
+						<div id="J_read_main">
+								<div class="fr">
+				<!--开始右侧广告位-->
+					
+				<!--结束右侧广告位-->
+				</div>
+				<div class="editor_content">
+					<img src="http://www.atcpu.com/res/images/emotion/default/17.gif" /><img src="http://www.atcpu.com/res/images/emotion/default/17.gif" /><img src="http://www.atcpu.com/res/images/emotion/default/17.gif" /><img src="http://www.atcpu.com/res/images/emotion/default/17.gif" /><img src="http://www.atcpu.com/res/images/emotion/default/17.gif" /><img src="http://www.atcpu.com/res/images/emotion/default/17.gif" /><img src="http://www.atcpu.com/res/images/emotion/default/17.gif" /><img src="http://www.atcpu.com/res/images/emotion/default/17.gif" />				</div>
+							</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="box_wrap floor_bottom" valign="bottom">
+					<div id="app_read_floor_6"></div>
+				
+			<div class="floor_bottom_tips cc">
+								<span class="fr">
+									</span>
+								<a rel="nofollow" href="http://www.atcpu.com/bbs-post-fastreply?tid=13168&pid=37946" data-pid="37946" class="a_reply J_read_reply" data-topped="false">回复<span style="display:none">(0)</span></a>
+								<a rel="nofollow" href="http://www.atcpu.com/like-mylike-doLike?typeid=2&fromid=37946" data-tid="13168" data-pid="37946" data-fid="80" class="a_like J_like_btn J_qlogin_trigger">喜欢</a><span style="display:none">(<a class="J_like_user_btn a_like_num" data-pid="37946" href="http://www.atcpu.com/like-like-getLast?typeid=2&fromid=37946">0</a>)</span>
+				
+			
+&nbsp;&nbsp;&nbsp;&nbsp;<a role="button" rel="nofollow" href="#" data-pid="37946" data-uri="http://www.atcpu.com/app-mark-mark?tid=13168&pid=37946&app=mark" class="J_plugin_read_mark" id=""><span>评分</span></a>
+<script>
+Wind.ready('global.js', function(){
+	Wind.js('http://www.atcpu.com/themes/extres/mark/js/mark.min.js?v=' + GV.JS_VERSION);
+});
+</script>
+
+			</div>
+			<div style="display:none;" class="J_reply_wrap" id="J_reply_wrap_37946"><div class="pop_loading"></div></div>
+		</td>
+	</tr>
+</table>
+</div>
+			<a name="43763"></a>			<div id="cloudwind_read_readfloor_43763"></div>
+<div class="floor cc J_read_floor" id="read_43763">
+<table width="100%" style="table-layout:fixed;" class="floor_table">
+	<tr>
+		<td rowspan="2" class="floor_left">
+			<div class="floor_info">
+				<!--头像-->
+				<div class="face">
+					<a href="http://www.atcpu.com/u/10210" class="J_user_card_show" data-uid="10210" target="_blank"><img src="http://www.atcpu.com/windid/attachment/avatar/000/01/02/10210_middle.jpg" class="J_avatar" data-type="middle" alt="lhgemail"></a>
+				</div>
+				<!--用户名-->
+				<div class="name">
+					<span class="man_unol" title="离线"></span><a href="http://www.atcpu.com/u/10210" class="J_user_card_show mr5" data-uid="10210">lhgemail</a>
+									</div>
+				<!--等级-->
+				<div class="level">
+					<div>新手上路</div>
+					<img src="http://www.atcpu.com/res/images/level/3.gif" alt="新手上路">
+				</div>
+				<!--相关数据-->
+				<ul class="cc integral">
+									<li><em>发帖数</em><a href="http://www.atcpu.com/space-thread-run?uid=10210" target="_blank">2</a></li>
+										<li><em>QQ</em><span>49828718</span></li>
+										<li><em>火币</em><span title="8枚">8枚</span></li>
+										<li><em>粉丝</em><a href="http://www.atcpu.com/space-fans-run?uid=10210" target="_blank">0</a></li>
+										<li><em>关注</em><a href="http://www.atcpu.com/space-follows-run?uid=10210" target="_blank">0</a></li>
+									</ul>
+								<!--发私信加关注-->
+				<div class="operate cc">
+					<a rel="nofollow" href="http://www.atcpu.com/my-follow-add?uid=10210" data-uid="10210" class="follow J_read_follow J_qlogin_trigger">加关注</a>
+					<a rel="nofollow" href="http://www.atcpu.com/message-message-pop?username=lhgemail" class="message J_send_msg_pop J_qlogin_trigger" data-name="lhgemail">写私信</a>
+					<a rel="nofollow" href="http://www.atcpu.com/app-index-act?app=dongta" class="dongta J_qlogin_trigger J_dongta_act" data-uid="10210"><em></em>打招呼</a>				</div>
+								<!--广告位-->
+				
+				<!--信息栏结束-->
+			</div>
+		</td>
+		<td class="box_wrap floor_right">
+			<div class="fl"><div class="floor_arrow"><em></em><span></span></div></div>
+						<div class="c"></div>
+			<div class="floor_top_tips cc">
+				<div style="position:relative;"><span class="lou J_floor_copy" title="复制此楼地址"  data-hash="read_43763">7楼<sup>#</sup></span></div>
+								<span class="fl">发布于：2013-07-26 17:49				</span>
+			</div>
+						<div id="J_read_main">
+								<div class="fr">
+				<!--开始右侧广告位-->
+					
+				<!--结束右侧广告位-->
+				</div>
+				<div class="editor_content">
+					111111111111111111111111111111				</div>
+							</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="box_wrap floor_bottom" valign="bottom">
+					<div id="app_read_floor_7"></div>
+				
+			<div class="floor_bottom_tips cc">
+								<span class="fr">
+									</span>
+								<a rel="nofollow" href="http://www.atcpu.com/bbs-post-fastreply?tid=13168&pid=43763" data-pid="43763" class="a_reply J_read_reply" data-topped="false">回复<span style="display:none">(0)</span></a>
+								<a rel="nofollow" href="http://www.atcpu.com/like-mylike-doLike?typeid=2&fromid=43763" data-tid="13168" data-pid="43763" data-fid="80" class="a_like J_like_btn J_qlogin_trigger">喜欢</a><span style="display:none">(<a class="J_like_user_btn a_like_num" data-pid="43763" href="http://www.atcpu.com/like-like-getLast?typeid=2&fromid=43763">0</a>)</span>
+				
+			
+&nbsp;&nbsp;&nbsp;&nbsp;<a role="button" rel="nofollow" href="#" data-pid="43763" data-uri="http://www.atcpu.com/app-mark-mark?tid=13168&pid=43763&app=mark" class="J_plugin_read_mark" id=""><span>评分</span></a>
+<script>
+Wind.ready('global.js', function(){
+	Wind.js('http://www.atcpu.com/themes/extres/mark/js/mark.min.js?v=' + GV.JS_VERSION);
+});
+</script>
+
+			</div>
+			<div style="display:none;" class="J_reply_wrap" id="J_reply_wrap_43763"><div class="pop_loading"></div></div>
+		</td>
+	</tr>
+</table>
+</div>
+			<a name="48489"></a>			<div id="cloudwind_read_readfloor_48489"></div>
+<div class="floor cc J_read_floor" id="read_48489">
+<table width="100%" style="table-layout:fixed;" class="floor_table">
+	<tr>
+		<td rowspan="2" class="floor_left">
+			<div class="floor_info">
+				<!--头像-->
+				<div class="face">
+					<a href="http://www.atcpu.com/u/10747" class="J_user_card_show" data-uid="10747" target="_blank"><img src="http://www.atcpu.com/windid/attachment/avatar/000/01/07/10747_middle.jpg" class="J_avatar" data-type="middle" alt="下溪_"></a>
+				</div>
+				<!--用户名-->
+				<div class="name">
+					<span class="man_unol" title="离线"></span><a href="http://www.atcpu.com/u/10747" class="J_user_card_show mr5" data-uid="10747">下溪_</a>
+									</div>
+				<!--等级-->
+				<div class="level">
+					<div>新手上路</div>
+					<img src="http://www.atcpu.com/res/images/level/3.gif" alt="新手上路">
+				</div>
+				<!--相关数据-->
+				<ul class="cc integral">
+									<li><em>发帖数</em><a href="http://www.atcpu.com/space-thread-run?uid=10747" target="_blank">6</a></li>
+										<li><em>QQ</em><span>380017750</span></li>
+										<li><em>火币</em><span title="7枚">7枚</span></li>
+										<li><em>粉丝</em><a href="http://www.atcpu.com/space-fans-run?uid=10747" target="_blank">0</a></li>
+										<li><em>关注</em><a href="http://www.atcpu.com/space-follows-run?uid=10747" target="_blank">0</a></li>
+									</ul>
+								<!--发私信加关注-->
+				<div class="operate cc">
+					<a rel="nofollow" href="http://www.atcpu.com/my-follow-add?uid=10747" data-uid="10747" class="follow J_read_follow J_qlogin_trigger">加关注</a>
+					<a rel="nofollow" href="http://www.atcpu.com/message-message-pop?username=%CF%C2%CF%AA_" class="message J_send_msg_pop J_qlogin_trigger" data-name="下溪_">写私信</a>
+					<a rel="nofollow" href="http://www.atcpu.com/app-index-act?app=dongta" class="dongta J_qlogin_trigger J_dongta_act" data-uid="10747"><em></em>打招呼</a>				</div>
+								<!--广告位-->
+				
+				<!--信息栏结束-->
+			</div>
+		</td>
+		<td class="box_wrap floor_right">
+			<div class="fl"><div class="floor_arrow"><em></em><span></span></div></div>
+						<div class="c"></div>
+			<div class="floor_top_tips cc">
+				<div style="position:relative;"><span class="lou J_floor_copy" title="复制此楼地址"  data-hash="read_48489">8楼<sup>#</sup></span></div>
+								<span class="fl">发布于：2013-08-29 11:17				</span>
+			</div>
+						<div id="J_read_main">
+								<div class="fr">
+				<!--开始右侧广告位-->
+					
+				<!--结束右侧广告位-->
+				</div>
+				<div class="editor_content">
+					带你走				</div>
+							</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="box_wrap floor_bottom" valign="bottom">
+					<div id="app_read_floor_8"></div>
+				
+			<div class="floor_bottom_tips cc">
+								<span class="fr">
+									</span>
+								<a rel="nofollow" href="http://www.atcpu.com/bbs-post-fastreply?tid=13168&pid=48489" data-pid="48489" class="a_reply J_read_reply" data-topped="false">回复<span style="display:none">(0)</span></a>
+								<a rel="nofollow" href="http://www.atcpu.com/like-mylike-doLike?typeid=2&fromid=48489" data-tid="13168" data-pid="48489" data-fid="80" class="a_like J_like_btn J_qlogin_trigger">喜欢</a><span style="display:none">(<a class="J_like_user_btn a_like_num" data-pid="48489" href="http://www.atcpu.com/like-like-getLast?typeid=2&fromid=48489">0</a>)</span>
+				
+			
+&nbsp;&nbsp;&nbsp;&nbsp;<a role="button" rel="nofollow" href="#" data-pid="48489" data-uri="http://www.atcpu.com/app-mark-mark?tid=13168&pid=48489&app=mark" class="J_plugin_read_mark" id=""><span>评分</span></a>
+<script>
+Wind.ready('global.js', function(){
+	Wind.js('http://www.atcpu.com/themes/extres/mark/js/mark.min.js?v=' + GV.JS_VERSION);
+});
+</script>
+
+			</div>
+			<div style="display:none;" class="J_reply_wrap" id="J_reply_wrap_48489"><div class="pop_loading"></div></div>
+		</td>
+	</tr>
+</table>
+</div>
+			<a name="48491"></a>			<div id="cloudwind_read_readfloor_48491"></div>
+<div class="floor cc J_read_floor" id="read_48491">
+<table width="100%" style="table-layout:fixed;" class="floor_table">
+	<tr>
+		<td rowspan="2" class="floor_left">
+			<div class="floor_info">
+				<!--头像-->
+				<div class="face">
+					<a href="http://www.atcpu.com/u/10656" class="J_user_card_show" data-uid="10656" target="_blank"><img src="http://www.atcpu.com/windid/attachment/avatar/000/01/06/10656_middle.jpg" class="J_avatar" data-type="middle" alt="klqhjz"></a>
+				</div>
+				<!--用户名-->
+				<div class="name">
+					<span class="man_unol" title="离线"></span><a href="http://www.atcpu.com/u/10656" class="J_user_card_show mr5" data-uid="10656">klqhjz</a>
+									</div>
+				<!--等级-->
+				<div class="level">
+					<div>新手上路</div>
+					<img src="http://www.atcpu.com/res/images/level/3.gif" alt="新手上路">
+				</div>
+				<!--相关数据-->
+				<ul class="cc integral">
+									<li><em>发帖数</em><a href="http://www.atcpu.com/space-thread-run?uid=10656" target="_blank">17</a></li>
+										<li><em>QQ</em><span>635086868</span></li>
+										<li><em>火币</em><span title="15枚">15枚</span></li>
+										<li><em>粉丝</em><a href="http://www.atcpu.com/space-fans-run?uid=10656" target="_blank">0</a></li>
+										<li><em>关注</em><a href="http://www.atcpu.com/space-follows-run?uid=10656" target="_blank">0</a></li>
+									</ul>
+								<!--发私信加关注-->
+				<div class="operate cc">
+					<a rel="nofollow" href="http://www.atcpu.com/my-follow-add?uid=10656" data-uid="10656" class="follow J_read_follow J_qlogin_trigger">加关注</a>
+					<a rel="nofollow" href="http://www.atcpu.com/message-message-pop?username=klqhjz" class="message J_send_msg_pop J_qlogin_trigger" data-name="klqhjz">写私信</a>
+					<a rel="nofollow" href="http://www.atcpu.com/app-index-act?app=dongta" class="dongta J_qlogin_trigger J_dongta_act" data-uid="10656"><em></em>打招呼</a>				</div>
+								<!--广告位-->
+				
+				<!--信息栏结束-->
+			</div>
+		</td>
+		<td class="box_wrap floor_right">
+			<div class="fl"><div class="floor_arrow"><em></em><span></span></div></div>
+						<div class="c"></div>
+			<div class="floor_top_tips cc">
+				<div style="position:relative;"><span class="lou J_floor_copy" title="复制此楼地址"  data-hash="read_48491">9楼<sup>#</sup></span></div>
+								<span class="fl">发布于：2013-08-29 11:20				</span>
+			</div>
+						<div id="J_read_main">
+				<div class="luckyfree_lou mb10 tac cc" style="background:#FFF9E3; border:0px solid #F4F4F4; height:30px; line-height:30px;">
+    <a class="s2" href="http://www.atcpu.com/app-index-run?app=luckyfree" target="_blank">发帖际遇：klqhjz领悟到发帖可以增加积分，获得3枚火币</a>
+</div>				<div class="fr">
+				<!--开始右侧广告位-->
+					
+				<!--结束右侧广告位-->
+				</div>
+				<div class="editor_content">
+					谢谢分享				</div>
+							</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="box_wrap floor_bottom" valign="bottom">
+					<div id="app_read_floor_9"></div>
+				
+			<div class="floor_bottom_tips cc">
+								<span class="fr">
+									</span>
+								<a rel="nofollow" href="http://www.atcpu.com/bbs-post-fastreply?tid=13168&pid=48491" data-pid="48491" class="a_reply J_read_reply" data-topped="false">回复<span style="display:none">(0)</span></a>
+								<a rel="nofollow" href="http://www.atcpu.com/like-mylike-doLike?typeid=2&fromid=48491" data-tid="13168" data-pid="48491" data-fid="80" class="a_like J_like_btn J_qlogin_trigger">喜欢</a><span style="display:none">(<a class="J_like_user_btn a_like_num" data-pid="48491" href="http://www.atcpu.com/like-like-getLast?typeid=2&fromid=48491">0</a>)</span>
+				
+			
+&nbsp;&nbsp;&nbsp;&nbsp;<a role="button" rel="nofollow" href="#" data-pid="48491" data-uri="http://www.atcpu.com/app-mark-mark?tid=13168&pid=48491&app=mark" class="J_plugin_read_mark" id=""><span>评分</span></a>
+<script>
+Wind.ready('global.js', function(){
+	Wind.js('http://www.atcpu.com/themes/extres/mark/js/mark.min.js?v=' + GV.JS_VERSION);
+});
+</script>
+
+			</div>
+			<div style="display:none;" class="J_reply_wrap" id="J_reply_wrap_48491"><div class="pop_loading"></div></div>
+		</td>
+	</tr>
+</table>
+</div>
+			<a name="48496"></a><a name="a"></a>			<div id="cloudwind_read_readfloor_48496"></div>
+<div class="floor cc J_read_floor" id="read_48496">
+<table width="100%" style="table-layout:fixed;" class="floor_table">
+	<tr>
+		<td rowspan="2" class="floor_left">
+			<div class="floor_info">
+				<!--头像-->
+				<div class="face">
+					<a href="http://www.atcpu.com/u/10656" class="J_user_card_show" data-uid="10656" target="_blank"><img src="http://www.atcpu.com/windid/attachment/avatar/000/01/06/10656_middle.jpg" class="J_avatar" data-type="middle" alt="klqhjz"></a>
+				</div>
+				<!--用户名-->
+				<div class="name">
+					<span class="man_unol" title="离线"></span><a href="http://www.atcpu.com/u/10656" class="J_user_card_show mr5" data-uid="10656">klqhjz</a>
+									</div>
+				<!--等级-->
+				<div class="level">
+					<div>新手上路</div>
+					<img src="http://www.atcpu.com/res/images/level/3.gif" alt="新手上路">
+				</div>
+				<!--相关数据-->
+				<ul class="cc integral">
+									<li><em>发帖数</em><a href="http://www.atcpu.com/space-thread-run?uid=10656" target="_blank">17</a></li>
+										<li><em>QQ</em><span>635086868</span></li>
+										<li><em>火币</em><span title="15枚">15枚</span></li>
+										<li><em>粉丝</em><a href="http://www.atcpu.com/space-fans-run?uid=10656" target="_blank">0</a></li>
+										<li><em>关注</em><a href="http://www.atcpu.com/space-follows-run?uid=10656" target="_blank">0</a></li>
+									</ul>
+								<!--发私信加关注-->
+				<div class="operate cc">
+					<a rel="nofollow" href="http://www.atcpu.com/my-follow-add?uid=10656" data-uid="10656" class="follow J_read_follow J_qlogin_trigger">加关注</a>
+					<a rel="nofollow" href="http://www.atcpu.com/message-message-pop?username=klqhjz" class="message J_send_msg_pop J_qlogin_trigger" data-name="klqhjz">写私信</a>
+					<a rel="nofollow" href="http://www.atcpu.com/app-index-act?app=dongta" class="dongta J_qlogin_trigger J_dongta_act" data-uid="10656"><em></em>打招呼</a>				</div>
+								<!--广告位-->
+				
+				<!--信息栏结束-->
+			</div>
+		</td>
+		<td class="box_wrap floor_right">
+			<div class="fl"><div class="floor_arrow"><em></em><span></span></div></div>
+						<div class="c"></div>
+			<div class="floor_top_tips cc">
+				<div style="position:relative;"><span class="lou J_floor_copy" title="复制此楼地址"  data-hash="read_48496">10楼<sup>#</sup></span></div>
+								<span class="fl">发布于：2013-08-29 11:27				</span>
+			</div>
+						<div id="J_read_main">
+								<div class="fr">
+				<!--开始右侧广告位-->
+					
+				<!--结束右侧广告位-->
+				</div>
+				<div class="editor_content">
+					谢谢分享				</div>
+							</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="box_wrap floor_bottom" valign="bottom">
+					<div id="app_read_floor_10"></div>
+				
+			<div class="floor_bottom_tips cc">
+								<span class="fr">
+									</span>
+								<a rel="nofollow" href="http://www.atcpu.com/bbs-post-fastreply?tid=13168&pid=48496" data-pid="48496" class="a_reply J_read_reply" data-topped="false">回复<span style="display:none">(0)</span></a>
+								<a rel="nofollow" href="http://www.atcpu.com/like-mylike-doLike?typeid=2&fromid=48496" data-tid="13168" data-pid="48496" data-fid="80" class="a_like J_like_btn J_qlogin_trigger">喜欢</a><span style="display:none">(<a class="J_like_user_btn a_like_num" data-pid="48496" href="http://www.atcpu.com/like-like-getLast?typeid=2&fromid=48496">0</a>)</span>
+				
+			
+&nbsp;&nbsp;&nbsp;&nbsp;<a role="button" rel="nofollow" href="#" data-pid="48496" data-uri="http://www.atcpu.com/app-mark-mark?tid=13168&pid=48496&app=mark" class="J_plugin_read_mark" id=""><span>评分</span></a>
+<script>
+Wind.ready('global.js', function(){
+	Wind.js('http://www.atcpu.com/themes/extres/mark/js/mark.min.js?v=' + GV.JS_VERSION);
+});
+</script>
+
+			</div>
+			<div style="display:none;" class="J_reply_wrap" id="J_reply_wrap_48496"><div class="pop_loading"></div></div>
+		</td>
+	</tr>
+</table>
+</div>
+			<div class="read_pages_wrap cc" id="floor_reply">
+				<a rel="nofollow" href="http://www.atcpu.com/bbs-post-run?fid=80" id="J_read_post_btn" class="btn_post J_qlogin_trigger">发帖</a>
+				<!-- 锁定时间 -->
+								<a rel="nofollow" href="http://www.atcpu.com/bbs-post-reply?tid=13168" data-referer="true" class="btn_replay J_qlogin_trigger">回复</a>
+								<div class="J_page_wrap" data-key="true">
+				<div class="pages" style="margin-right:3px;"><a href="http://www.atcpu.com/thread/80/1" class="pages_pre" rel="nofollow">&laquo; 返回列表</a></div>
+								
+				</div>
+			</div>
+			<div style="display:none;" class="btn_post_menu" id="J_read_post_types">
+				<ul>
+										<li><a href="http://www.atcpu.com/bbs-post-run?fid=80" data-referer="true" class="J_qlogin_trigger">普通帖</a></li>
+									</ul>
+			</div>
+						<!--快速回复-->
+			<div class="floor cc">
+				<table width="100%" style="table-layout:fixed;" class="floor_table">
+					<tr>
+						<td class="floor_left">
+							<div class="floor_info">
+							<img class="J_avatar" data-type="middle" src="http://www.atcpu.com/windid/attachment/avatar/000/00/00/0_middle.jpg" alt="游客" />
+							</div>
+						</td>
+						<td class="floor_reply box_wrap">
+							<div class="fl"><div class="floor_arrow"><em></em><span></span></div></div>
+															<div class="reply_login_tips">
+									您需要登录后才可以回帖，<a href="#floor_reply" rel="nofollow" class="J_qlogin_trigger">登陆</a>&nbsp;或者&nbsp;<a rel="nofollow" href="http://www.atcpu.com/u-register-run">注册</a>
+								</div>
+													</td>
+					</tr>
+				</table>
+			</div>
+			<!--快速回复结束-->
+						
+			
+			<div id="cloudwind_read_bottom"></div>
+		</div>
+			</div>
+	<style>
+.footer_wrap{
+	background-color:#00B7E2;
+	width:100%;
+	height:240px;
+	margin:0 auto;
+	border-top:1px solid #ccc;
+	border-top:1px solid rgba(0,0,0,0.15);
+}
+.footer{
+	padding:11px 0;
+	border-top:1px solid #fff;
+	border-top:1px solid rgba(255,255,255,0.7);
+}
+.footer p{
+	font-size:10px;
+	color:white;
+}
+.footer p a:hover{
+	color:black;
+}
+.bottom{
+	padding:0 0 5px;
+	text-align:center;
+	color:#999;
+}
+.bottom a{
+	margin:0 10px;
+	color:#666;
+}
+.foothead{
+	float:left;
+	padding-left:30px;
+	width:200px;
+}
+.footheadimg{
+	width:180px;
+	height:43px;
+}
+</style>
+
+<!--.main-wrap,#main End-->
+<div class="tac">
+<br />
+
+</div>
+<div class="footer_wrap">
+	<div class="footer">
+		<div class=foothead>
+		<img class="footheadimg" src="http://www.atcpu.com/logo.png">
+		<p>Powered by <a href="http://www.atcpu.com/" target="_blank" rel="nofollow">atcpu.com</a> &copy;2010-2013 <a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow"><BR>苏ICP备13053546号-1</a></p>
+		<p><script type="text/javascript" src="http://js.tongji.linezing.com/2642499/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2642499/tongji.gif"/></a></noscript><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=357460608&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:357460608:51" alt="灯火互联网" title="灯火互联网"/></a></p>
+		</div>
+		<div class="bottom">
+		
+		<a href="http://www.atcpu.com/profile-extends-run?_left=verify" target="_blank" style="color:#ffc000;font-weight:bold;">手机认证</a><a href="http://www.atcpu.com/index.php?m=space" target="_blank" style="color:#ffc000;font-weight:bold;">个人空间</a><a href="http://www.atcpu.com/app-index-run?app=album" target="_blank" style="color:#ffc000;font-weight:bold;">个人相册</a><a href="http://www.atcpu.com/music/kuwodiantai.php" target="_blank" style="color:#ffc000;">音乐电台</a><a href="http://www.atcpu.com/index.php?m=app&app=meiqimusic" style="color:#ffc000;">音乐畅听</a><a href="https://me.alipay.com/atcpu" target="_blank" style="color:#ffc000;">收款主页</a><a href="http://www.atcpu.com/index.php?m=app&app=u179sjjx" target="_blank" style="color:#ffc000;">手机吉凶</a><a href="http://www.atcpu.com/index.php?m=app&app=medzminiyy" target="_blank" style="color:#ffc000;">在线YY</a><a href="http://www.atcpu.com/index.php?m=app&app=meiqiapp" target="_blank" style="color:#ffc000;">百宝箱</a>		</div>
+		
+	</div>
+	
+	<div id="cloudwind_common_bottom"></div>
+
+
+
+    <link href="http://www.atcpu.com/themes/extres/xmGuestPrompt/css/global.css?v=9.0 20130227" rel="stylesheet" />
+    <div id="xmGuestPrompt_footer" style="display: none;">
+        <div class="login-box">
+            <div class="login-user cc">
+                <div class="login-title fl cc">
+                    <h3 class="fl">逛了这许久，何不进去瞧瞧？</h3>
+                    <span class="login-arrow fl"></span>
+                </div>
+                <div class="login-cont fl">
+                    <form action="index.php?m=u&c=login&a=dologin" method="post" id="xmGuestPrompt_form">
+                        <ul id="xmGuestPrompt_ul">
+                            <li>
+                                <input type="text" value="输入用户名" onblur="this.value == '' ? this.value = '输入用户名' : ''" onfocus="this.value == '输入用户名' ? this.value = '' : ''" tabindex="1" class="txt" name="username" id="xmGuestPrompt_username">
+                                <div class="login-item">
+                                    <label>
+                                        <input type="checkbox" value="1" tabindex="3" checked="checked" class="checkbox" name="rememberme" id="xmGuestPrompt_rememberme">
+                                        &nbsp;下次自动登录
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <input type="password" value="请输入密码" onblur="this.value == '' ? this.value = '请输入密码' : ''" onfocus="this.value == '请输入密码' ? this.value = '' : ''" tabindex="2" class="txt" name="password" id="xmGuestPrompt_password">
+                                <!--                                <div class="login-item">
+                                                                    <a title="忘记密码？" href="index.php?m=u&c=findPwd">忘记密码？</a>
+                                                                </div>-->
+                            </li>
+                            <li class="login-qt">
+                                <button class="login-button" type="submit" id="xmGuestPrompt_login"><span>登录</span></button>
+                                <div class="login-item"><a target="_blank" href="index.php?m=u&c=register">新用户注册</a></div>
+                            </li>
+                        </ul>
+                    <input type="hidden" name="csrf_token" value="0c05ccf6c04e4d50"/></form>
+                </div>
+            </div>
+            <a title="关闭" class="close box-close" ohref="javascript:;" id="xmGuestPrompt_close">关闭</a>
+        </div>
+    </div>
+    <script>
+        Wind.ready('jquery.js', function() {
+            window.setTimeout(function() {
+                $('#xmGuestPrompt_footer').fadeIn();
+            }, 3000);
+            $('#xmGuestPrompt_close').click(function() {
+                $('#xmGuestPrompt_footer').fadeOut();
+            });
+
+            var username = $('#xmGuestPrompt_username'),
+                    sidebar_login_btn = $('#xmGuestPrompt_login');
+            if (username.length) {
+                Wind.use('draggable', 'ajaxForm', function() {
+                    var password = $('#xmGuestPrompt_password');
+                    $("#xmGuestPrompt_form").ajaxForm({
+                        dataType: 'json',
+                        beforeSubmit: function(arr, $form, options) {
+                            Wind.Util.ajaxBtnDisable(sidebar_login_btn);
+                            $('#J_login_tips').remove();
+                        },
+                        success: function(data, statusText, xhr, $form) {
+                            if (data.state === 'success') {
+                                if (data.message.check.url) {
+                                    //验证问题
+                                    Wind.Util.ajaxBtnEnable(sidebar_login_btn);
+                                    $.post(data.message.check.url, function(data) {
+                                        //引入所需组件并显示弹窗
+                                        $('body').append(data);
+                                       //获得焦点
+                                        var question_wrap = $('#J_login_question_set_wrap, #J_login_question_wrap');
+                                        //global.js
+                                        Wind.Util.popPos(question_wrap);
+                                        question_wrap.find('input:text:visible:first').focus();
+                                        Wind.Util.getVerifyTemp({
+                                            wrap: $('#J_verify_code')				//验证码容器
+                                        });
+                                    }, 'html');
+                                } else {
+                                    window.location.href = data.referer;
+                                }
+                            } else {
+                                Wind.Util.ajaxBtnEnable(sidebar_login_btn);
+                                $('<li id="J_login_tips" style="display:none;"><div class="tips"><div class="tips_icon_error">' + data.message + '</div></div></li>').appendTo($('#xmGuestPrompt_ul')).fadeIn(200).delay(5000).fadeOut();
+                            }
+                        }
+
+                    });
+
+                });
+
+            }
+        });
+
+    </script>
+
+</div>
+
+<!--返回顶部-->
+<a href="#" rel="nofollow" role="button" id="back_top" tabindex="-1">返回顶部</a>
+
+</div>
+
+<textarea id="J_like_user_ta" class="dn">
+	<div id="" class="core_pop_wrap" style="position:absolute;">
+		<div class="core_pop">
+			<div class="floot_like_pop">
+				<div class="pop_top"><a href="#" class="pop_close J_like_user_close">关闭</a>最新喜欢</div>
+				<div class="pop_cont">
+					<ul class="cc J_like_user_list"></ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</textarea>
+
+<script>
+var TID = '13168';
+Wind.use('jquery', 'global', 'dialog', function(){
+
+
+	// 阅读页的常用交互
+	Wind.js(GV.JS_ROOT +'pages/bbs/read.js?v='+ GV.JS_VERSION);
+
+	// 投票帖
+	if($('ul.J_vote_item, a.J_vote_list_show').length) {
+		Wind.js(GV.JS_ROOT +'pages/bbs/readVote.js?v='+ GV.JS_VERSION);
+	}
+
+	// 购买记录
+	if($('#J_content_sell, #J_attach_buy, a.J_buy_record, .J_attach_post_del, a.J_attach_post_buy').length) {
+		Wind.js(GV.JS_ROOT + 'pages/bbs/buyRecords.js?v=' + GV.JS_VERSION);
+	}
+
+	//媒体播放
+	if( $('div.J_audio,div.J_video').length ) {
+		Wind.js(window.GV.JS_ROOT + 'pages/bbs/media_play.js?v=' + GV.JS_VERSION);
+	}
+
+
+});
+</script>
+
+
+
+
+<!-- 将此代码放在适当的位置，建议在body结束前 -->
+<script id="bdimgshare_shell"></script>
+<script>
+var bdShare_config_imgshare = {
+	"type":"list"
+	,"size":"big"
+	,"pos":"top"
+	,"color":"black"
+	,"list":["qzone","tsina","tqq","bdhome","renren","sqq"]
+	,"uid":"626292"
+};
+document.getElementById("bdimgshare_shell").src="http://bdimg.share.baidu.com/static/js/imgshare_shell.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<script>var URL_DONGTA = 'http://www.atcpu.com/app-index-send?app=dongta';</script><script src="http://www.atcpu.com/themes/extres/dongta/js/dongta.js"></script>
+</body>
+</html><script type="text/javascript">(function(d,t){var url="http://app.open.phpwind.com/?src=read&url=www.atcpu.com&sn=www.atcpu.com&fid=80&uid=0&tid=13168&4139ae7c=0&charset=GBK&username=%D3%CE%BF%CD&title=unix%C8%EB%C3%C5%B3%F5%D1%A7%D5%DF%BD%CC%B3%CC&_ua=675e6127d4c9bead94&_shr=&_sqs=&_ssn=L2luZGV4LnBocA%3D%3D&_t=86400&_v=2625";var g=d.createElement(t);g.async=1;g.src=url;d.body.insertBefore(g,d.body.firstChild);}(document,"script"));</script>
