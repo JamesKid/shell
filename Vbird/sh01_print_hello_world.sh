@@ -1,6 +1,6 @@
 #!/bin/bash
 # Description:  this program is to print hello world in the screen
-# Editor:   zhangshijie Kidicc
+# Editor:   zhangshijie Kid
 # Version:  1.0
 # Date:     2013.12.5
 
