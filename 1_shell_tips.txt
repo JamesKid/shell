@@ -1,0 +1,19 @@
+# shortcut 
+	ctrl+a		: 将光标定位到命令的开头
+	ctrl+e		: 将光标定位到命令的结尾
+	ctrl+u		: 剪切光标之前的内容
+	ctrl+k		: 剪切光标之后的内容
+	ctrl+y		: 粘贴剪切的内容
+	ctrl+t		: 交换光标之前的两个字符顺序
+	ctrl+w		: 删除光标左边的参数(选项)或内容
+	ctrl+z		: 让正在执行的命令挂起
+
+# problem 
+	# shell 执行php报could open input file
+		#原因,由于sh文件的编码格式不是unix 导致的
+			vim test.sh
+			:set fileformat		# 查看当前文件的fileformat 若为dos 则改为unix
+			:set fileformat=unix		
+			sh test.sh			# 这样再执行就没有问题了
+
+	
