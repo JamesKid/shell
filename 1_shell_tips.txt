@@ -11,9 +11,15 @@
 # problem 
 	# shell 执行php报could open input file
 		#原因,由于sh文件的编码格式不是unix 导致的
-			vim test.sh
-			:set fileformat		# 查看当前文件的fileformat 若为dos 则改为unix
-			:set fileformat=unix		
-			sh test.sh			# 这样再执行就没有问题了
+			# test.sh
+				vim test.sh
+					#/bin/sh
+					php /tmp/test.php
+				
+			# fix test.sh 
+				vim test.sh
+				:set fileformat		# 查看当前文件的fileformat 若为dos 则改为unix
+				:set fileformat=unix		
+				sh test.sh			# 这样再执行就没有问题了
 
 	
