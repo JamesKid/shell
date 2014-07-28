@@ -1,0 +1,25 @@
+# .bashrc
+#  update time: 2013.12.2  1.add alias myip
+#	
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+# User specific aliases and functions
+
+	alias rm='rm -i'
+	alias cp='cp -i'
+	alias mv='mv -i'
+	alias ff='/usr/local/firefox/firefox'
+	alias ll='ls -lh --color=auto'
+	alias sshfs99='sshfs gameiboy@192.168.1.99:/home/gameiboy/ /mnt/99_server/home/gameiboy/'
+	# My alias 
+		# description:use 'myip' to show ip ...2013.12.2
+		alias myip="ifconfig eth0 |grep inet addr| sed s/^.*inet addr://g|cut -d   -f 1"
+		alias down="shutdown -h now"
+		# mongodb
+			alias mgstart="/usr/local/mongodb/bin/mongod --dbpath=/home/data/mongodb/ --logpath=/temp/dblog/mongodb/monod.log  --journal"
+			alias mgcstart="/usr/local/mongodb/bin/mongo"
+	# My mount
+		mount -t cifs -o username=administrator,password=zhangshijie //192.168.1.200/work_zhang /mnt/windows/e/work_zhang
