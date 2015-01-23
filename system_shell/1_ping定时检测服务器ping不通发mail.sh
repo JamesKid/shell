@@ -4,17 +4,17 @@
 #James Qi 2013
 #循环检测各台服务器，在指定的ping次数中丢失的必须小于某个设定值，如果大于则说明有问题，发邮件通知报警
 #在/etc/crontab中设定本程序的执行周期
+# 不同的linux服务器ping出的结果不一样,请跟据实际情况修改 awk '{print $4}' 这一行的取值 和大于小于
 ####################
 #
 
 #参数设置
-COUNT=50 #每台服务器测试ping的次数
-MAX=40 #其中最多无法ping通的次数
-HOST=(  # 服务器ip,或域名
-192.168.1.68
+COUNT=20 #每台服务器测试ping的次数
+MAX=10 #其中最多无法ping通的次数
+HOST=(
 192.168.1.99
-113.252.248.103
-www.ccc.com
+192.168.1.68
+www.baidu.com
 )
 
 #循环检测
@@ -22,8 +22,8 @@ for ipadd in "${HOST[@]}"
 do
 	timing=`date +%Y/%m/%d/%H:%M:%S`
 	ping $ipadd -c $COUNT > 1ping.log
-	losspag=`grep "packet loss" 1ping.log |awk '{print $6}' |sed 's/%//g'`
-	if [ $losspag -ge $MAX ] ;
+	losspag=`grep "packet loss" 1ping.log |awk '{print $4}' |sed 's/%//g'`
+	if [ $losspag -lt $MAX ] ;
 	then
 		echo  $timing > /tmp/tmp.log
 		echo -n $ipadd >> /tmp/tmp.log
