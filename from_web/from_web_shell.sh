@@ -27,7 +27,16 @@
 			do 
 			ping -c 3 $B >>/tmp/shuchu.txt
 			done
-
+			
+# crontab every second execute (crontab 每秒执行shell实现方法)
+	#!/bin/bash  
+	step=2 #间隔的秒数，不能大于60  
+	for (( i = 0; i < 60; i=(i+step) )); do  
+		$(php '/home/fdipzone/php/crontab/tolog.php')  
+		sleep $step  
+	done  
+	exit 0  
+	# * * * * * /home/fdipzone/php/crontab/crontab.sh  
 
 
 
