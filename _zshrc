@@ -322,16 +322,16 @@ export HISTTIMEFORMAT # 历史命令添加时间
 	alias 113mysql='mysql -h 113.204.169.107 -u gameiboy -p -P 33334'
 	#　扩展名自动打开　
 		# 如zsh下直接输入test.php可以默认用vim打开
-		alias -s gz='tar -xzvf'
-		alias -s tgz='tar -xzvf'
-		alias -s zip='unzip'
-		alias -s bz2='tar -xjvf'
-		alias -s php='vim'
-		alias -s html='vim'
-		alias -s py='vim'
-		alias -s c='vim'
-		alias -s sh='vim'
-		alias -s txt='vim'
+	     alias -s gz='tar -xzvf'
+		 alias -s tgz='tar -xzvf'
+		 alias -s zip='unzip'
+		 alias -s bz2='tar -xjvf'
+		 alias -s php='vim'
+		 alias -s html='vim'
+		 alias -s py='vim'
+		 alias -s c='vim'
+		 alias -s sh='vim'
+		 alias -s txt='vim'
 	# #$%bg35hewrh3u3524#%u35h3#Y35h
 	# My alias 
 		# description:use 'myip' to show ip ...2013.12.2
